@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MoviesBusinessService;
+using MoviesBusinessService.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +43,7 @@ namespace MoviesApi
                             .SetPreflightMaxAge(TimeSpan.FromSeconds(3600)));
                 });
             });
+            services.AddScoped<IMovieManager, MovieManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

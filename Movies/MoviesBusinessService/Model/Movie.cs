@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace MoviesApi
+namespace MoviesBusinessService.Model
 {
     public class Movie
     {
@@ -16,5 +17,4 @@ namespace MoviesApi
         public string listingType { get; set; }
         public string imdbRating { get; set; }
     }
-
 }
