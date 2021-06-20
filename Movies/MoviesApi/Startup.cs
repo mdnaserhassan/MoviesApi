@@ -32,16 +32,13 @@ namespace MoviesApi
             services.AddControllers();
             services.AddCors(options =>
             {
-                services.AddCors(options =>
-                {
-                    var allowedOrigins = Configuration["AllowedCorsOrigins"].Split(',');
-                    options.AddPolicy(Cors_Policy,
-                        policyBuilder => policyBuilder.WithOrigins(allowedOrigins)
-                            .AllowAnyMethod()
-                            .AllowAnyHeader()
-                            .AllowCredentials()
-                            .SetPreflightMaxAge(TimeSpan.FromSeconds(3600)));
-                });
+                var allowedOrigins = Configuration["AllowedCorsOrigins"].Split(',');
+                options.AddPolicy(Cors_Policy,
+                    policyBuilder => policyBuilder.WithOrigins(allowedOrigins)
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .SetPreflightMaxAge(TimeSpan.FromSeconds(3600)));
             });
             services.AddScoped<IMovieManager, MovieManager>();
         }

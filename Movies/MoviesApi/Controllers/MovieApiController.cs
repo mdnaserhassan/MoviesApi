@@ -28,7 +28,7 @@ namespace MoviesApi.Controllers
 
         [HttpGet]
         [Route("Movies", Name = "Movies")]
-        public IEnumerable<Movie> GetMovies(string id)
+        public IEnumerable<Movie> GetMovies()
         {
            
             return this._app.getMovies();
